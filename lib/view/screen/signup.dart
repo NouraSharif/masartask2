@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:masar2/view/screen/home_screen.dart';
-import 'package:masar2/view/widget/authentication/signupheader.dart';
-import 'package:masar2/view/widget/authentication/buttomnavigation.dart';
 import 'package:masar2/view/widget/authentication/textformfield.dart';
 import 'package:masar2/view/widget/authentication/textrichsignup.dart';
 import 'package:masar2/view/widget/authentication/textsignup.dart';
@@ -13,14 +9,9 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: SingUpHeader()),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         children: [
-          TextSignUp(
-            text: "Please fill the following information to create new account",
-            fontSize: 16,
-          ),
           SizedBox(height: 30),
           Textformfield(
             title: "Your Email",
@@ -77,11 +68,7 @@ class Signup extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {
-              Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (context) => HomeScreen()));
-            },
+            onPressed: () {},
             child: Text(
               "Sign Up",
               style: TextStyle(fontWeight: FontWeight.bold),
@@ -91,28 +78,28 @@ class Signup extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10, bottom: 45),
             child: TextRichSignUp(),
           ),
-          Center(child: TextSignUp(text: "Or Continue with", fontSize: 16)),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ButtonNavigationSignUp(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.redAccent,
-                icon: FontAwesomeIcons.google,
-              ),
-              ButtonNavigationSignUp(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.blueAccent,
-                icon: FontAwesomeIcons.facebookF,
-              ),
-              ButtonNavigationSignUp(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.black,
-                icon: FontAwesomeIcons.apple,
-              ),
-            ],
-          ),
+          // Center(child: TextSignUp(text: "Or Continue with", fontSize: 16)),
+          // SizedBox(height: 10),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     ButtonNavigationSignUp(
+          //       foregroundColor: Colors.white,
+          //       backgroundColor: Colors.redAccent,
+          //       icon: FontAwesomeIcons.google,
+          //     ),
+          //     ButtonNavigationSignUp(
+          //       foregroundColor: Colors.white,
+          //       backgroundColor: Colors.blueAccent,
+          //       icon: FontAwesomeIcons.facebookF,
+          //     ),
+          //     ButtonNavigationSignUp(
+          //       foregroundColor: Colors.white,
+          //       backgroundColor: Colors.black,
+          //       icon: FontAwesomeIcons.apple,
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );

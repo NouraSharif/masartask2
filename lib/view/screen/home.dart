@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                 color: Colors.amber,
                 width: double.infinity,
               ),
-              Positioned(right: 0, child: Image.asset("images/logo.png")),
+              Positioned(right: 0, child: Image.asset("images/logo2.png")),
               Positioned(left: 35, top: 10, child: StackColumn()),
             ],
           ),

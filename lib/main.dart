@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masar2/view/screen/signup.dart';
+import 'package:masar2/view/screen/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: Signup(),
+      home: SplashScreen(),
     );
   }
 }
