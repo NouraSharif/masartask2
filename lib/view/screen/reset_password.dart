@@ -69,7 +69,9 @@ class ResetPassword extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => TabBarHeader()),
+                    MaterialPageRoute(
+                      builder: (context) => TabBarHeader(onThemeToggle: () {}),
+                    ),
                   );
                 },
                 child: Text(

@@ -7,13 +7,28 @@ import 'package:masar2/view/widget/authentication/buttomnavigation.dart';
 import 'package:masar2/view/widget/authentication/textsignup.dart';
 
 class TabBarHeader extends StatelessWidget {
-  const TabBarHeader({super.key});
+  final VoidCallback onThemeToggle;
+
+  const TabBarHeader({super.key, required this.onThemeToggle});
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              onPressed: onThemeToggle,
+              icon: Icon(
+                Theme.of(context).brightness == Brightness.dark
+                    ? Icons.light_mode
+                    : Icons.dark_mode,
+              ),
+            ),
+          ],
+        ),
+
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

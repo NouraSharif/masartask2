@@ -36,14 +36,34 @@ class Home extends StatelessWidget {
             child: ElementTitle(title: "New products"),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                spacing: 10,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [Products(), Products(), Products()],
-              ),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                int crossAxisCount;
+
+                if (constraints.maxWidth < 600) {
+                  crossAxisCount = 2;
+                } else if (constraints.maxWidth < 900) {
+                  crossAxisCount = 3;
+                } else {
+                  crossAxisCount = 4;
+                }
+
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 6,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 0.9,
+                  ),
+                  itemBuilder: (context, index) {
+                    return const Products();
+                  },
+                );
+              },
             ),
           ),
           SizedBox(height: 15),
@@ -100,14 +120,34 @@ class Home extends StatelessWidget {
             child: ElementTitle(title: "Most Solid"),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                spacing: 10,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [Products(), Products(), Products()],
-              ),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                int crossAxisCount;
+
+                if (constraints.maxWidth < 600) {
+                  crossAxisCount = 2;
+                } else if (constraints.maxWidth < 900) {
+                  crossAxisCount = 3;
+                } else {
+                  crossAxisCount = 4;
+                }
+
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 6,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 0.9,
+                  ),
+                  itemBuilder: (context, index) {
+                    return const Products();
+                  },
+                );
+              },
             ),
           ),
         ],
